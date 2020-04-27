@@ -27,7 +27,7 @@ import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/employee")
- @Api(value = "Authentication Controller")
+@Api(value = "Authentication Controller")
 public class EmployeeController {
 
 	@Autowired
@@ -41,7 +41,7 @@ public class EmployeeController {
 
 	@Autowired
 	AddEmployeeService addEmployeeService;
-	
+
 	@TrackTime
 	@PostMapping("/addEmployee")
 	ResponseEntity<Employee> addEmployee(@RequestBody Employee addEmployeeReqDomain) {
