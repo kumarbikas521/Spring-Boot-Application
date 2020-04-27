@@ -41,12 +41,12 @@ public class EmployeeController {
 
 	@Autowired
 	AddEmployeeService addEmployeeService;
+	
 	@TrackTime
 	@PostMapping("/addEmployee")
 	ResponseEntity<Employee> addEmployee(@RequestBody Employee addEmployeeReqDomain) {
 		Employee ear = (addEmployeeService.addEmployee(addEmployeeReqDomain));
 		return new ResponseEntity<Employee>(ear, HttpStatus.OK);
-
 	}
 
 	@TrackTime
