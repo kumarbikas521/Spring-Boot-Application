@@ -11,18 +11,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class ConfigurationDependency {                                    
-    @Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("com.practice.controller"))              
-          .paths(PathSelectors.any())                          
-          .build();                                           
-    }
-//    @Bean // (name = "org.dozer.Mapper")
-//	public DozerBeanMapper mapper() {
-//		return new DozerBeanMapper();
-//	}
+public class ConfigurationDependency {
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).select()
+				.apis(RequestHandlerSelectors.basePackage("com.spring.SpringBootApp.controller"))
+				.paths(PathSelectors.any()).build();
+	}
+	/*
+	 * @Bean // (name = "org.dozer.Mapper") public DozerBeanMapper mapper() { return
+	 * new DozerBeanMapper(); }
+	 */
 
 }

@@ -27,7 +27,7 @@ import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/employee")
-@Api(value = "Authentication Controller")
+ @Api(value = "Authentication Controller")
 public class EmployeeController {
 
 	@Autowired
@@ -39,13 +39,13 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
-	@Autowired()
+	@Autowired
 	AddEmployeeService addEmployeeService;
-
+	@TrackTime
 	@PostMapping("/addEmployee")
-	 ResponseEntity<Employee> addEmployee(@RequestBody Employee addEmployeeReqDomain) {
+	ResponseEntity<Employee> addEmployee(@RequestBody Employee addEmployeeReqDomain) {
 		Employee ear = (addEmployeeService.addEmployee(addEmployeeReqDomain));
-		return new ResponseEntity<Employee>(ear,HttpStatus.OK);
+		return new ResponseEntity<Employee>(ear, HttpStatus.OK);
 
 	}
 
@@ -84,11 +84,11 @@ public class EmployeeController {
 		return dr;
 
 	}
-	
+
 	@PutMapping("/updateEmployee/{id}")
 	Employee updateEmployeeById(@RequestBody Employee emp, @PathVariable("id") int id) {
 
-		Employee emp1 = employeeService.updateEmployeById(emp,id);
+		Employee emp1 = employeeService.updateEmployeById(emp, id);
 
 		return emp1;
 

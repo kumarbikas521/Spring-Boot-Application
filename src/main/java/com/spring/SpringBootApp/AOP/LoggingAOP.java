@@ -6,17 +6,15 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Aspect
-@Component
 public class LoggingAOP {
 
 	Logger log = LoggerFactory.getLogger(LoggingAOP.class);
 
-	@Pointcut(value="execution(* com.practice.*.*.*(..))")
+	@Pointcut(value="execution(* com.spring.SpringBootApp.*.*.*(..))")
 	private void LoggingPointCut() {
 
 	}
@@ -36,7 +34,7 @@ public class LoggingAOP {
 		return returnObject;
 	}
 
-	@Around("@annotation(com.practice.Annotation.TrackTime)")
+	@Around("@annotation(com.spring.SpringBootApp.Annotation.TrackTime)")
 	private Object trackTime(ProceedingJoinPoint pjp) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		Object obj = pjp.proceed();
