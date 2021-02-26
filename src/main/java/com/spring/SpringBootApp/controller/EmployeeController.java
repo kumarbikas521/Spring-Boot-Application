@@ -93,5 +93,11 @@ public class EmployeeController {
 		return emp1;
 
 	}
+	@GetMapping("/test")
+	String testMethod() {
+
+		return "Hello User!!";
+
+	}
 
 }
