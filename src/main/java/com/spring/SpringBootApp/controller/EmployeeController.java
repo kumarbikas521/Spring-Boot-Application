@@ -1,7 +1,6 @@
 package com.spring.SpringBootApp.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,10 @@ import com.spring.SpringBootApp.service.DeleteServive;
 import com.spring.SpringBootApp.service.EmployeeService;
 
 import io.swagger.annotations.Api;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/employee")
 @Api(value = "Authentication Controller")
@@ -93,11 +95,10 @@ public class EmployeeController {
 		return emp1;
 
 	}
+
 	@GetMapping("/test")
 	String testMethod() {
-
 		return "Hello User!!";
-
 	}
 
 }

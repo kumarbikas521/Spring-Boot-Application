@@ -18,5 +18,9 @@ public class AddEmployeeServiceImp implements AddEmployeeService {
 		Employee em = addEmployeeRepo.save(employeeRequestEvent);
 		return em;
 	}
+	
+	public void runSchedulerJob() {
+		
+	}
 
 }
